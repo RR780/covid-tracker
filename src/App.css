@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  transition: background 0.5s ease;
+  color: #222;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.app.dark {
+  background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
+  color: #eee;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 15px;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease, border-color 0.5s ease;
+}
+
+.app.dark .glass-card {
+  background: rgba(30, 30, 30, 0.6);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.05);
+}
+
+.MuiSelect-select {
+  font-weight: 600 !important;
+  color: inherit !important;
+}
+
+.MuiTypography-root {
+  transition: color 0.5s ease;
+}
+
+.MuiCardContent-root {
+  padding: 1.5rem !important;
+}
+
+/* Smooth fade in from AOS already included */
+/* Override Chart.js tooltip and legend colors in dark mode with inline options */
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .MuiGrid-root {
+    flex-direction: column !important;
   }
 }
